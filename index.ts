@@ -9,7 +9,6 @@ export default async ({
     port = 9229,
 }: Props): Promise<void> => {
     const currentInspectorUrl = inspector.url()
-    console.log('currentInspectorUrl:', currentInspectorUrl)
 
     const isInspectorStartedEarlier = !!currentInspectorUrl
     if (isInspectorStartedEarlier) {
@@ -19,7 +18,7 @@ export default async ({
         return
     }
     inspector.open(port, host)
-    console.log('inspector.open')
+
     // open -a "Google Chrome" http://stackoverflow.com
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
