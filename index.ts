@@ -56,11 +56,9 @@ export default async ({
         return
     }
     inspector.open(port, host)
-
     currentInspectorUrl = inspector.url()
 
     // startWsWatching(currentInspectorUrl)
-
     // open -a "Google Chrome" http://stackoverflow.com
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
