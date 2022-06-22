@@ -19,7 +19,7 @@ export default async ({
         return
     }
     inspector.open(port, host)
-    console.log('inspector.open')
+    console.log('Inspector opened on:', host, port)
     // open -a "Google Chrome" http://stackoverflow.com
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
