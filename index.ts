@@ -4,12 +4,50 @@ type Props = {
     host?: string
     port?: number
 }
+
+// const CDP = require('chrome-remote-interface')
+// async function example() {
+//     let client
+//     try {
+//         // connect to endpoint
+//         client = await CDP()
+//         // extract domains
+//         const { Network, Page } = client
+//         // setup handlers
+//         Network.requestWillBeSent(params => {
+//             console.log(params.request.url)
+//         })
+//         // enable events then start!
+//         await Network.enable()
+//         await Page.enable()
+//         await Page.navigate({ url: 'https://github.com' })
+//         await Page.loadEventFired()
+//     } catch (err) {
+//         console.error(err)
+//     } finally {
+//         if (client) {
+//             await client.close()
+//         }
+//     }
+// }
+// example()
+
+// const startWsWatching = wsUrl => {
+//     const DevToolsClient = require('./devtools-client')
+//     const Controller = new DevToolsClient()
+//     Controller.connect({
+//         nodeWSEndpoint: wsUrl,
+//     }).then(({ Debugger, Runtime, Profiler }) => {
+//         console.log('Debugger, Runtime, Profiler:', Debugger, Runtime, Profiler)
+//         // resolves with an object containing all available DevTools domains
+//     })
+// }
+
 export default async ({
     host = 'localhost',
     port = 9229,
 }: Props): Promise<void> => {
-    const currentInspectorUrl = inspector.url()
-
+    let currentInspectorUrl = inspector.url()
     const isInspectorStartedEarlier = !!currentInspectorUrl
     if (isInspectorStartedEarlier) {
         console.warn(
@@ -18,7 +56,8 @@ export default async ({
         return
     }
     inspector.open(port, host)
-
+    currentInspectorUrl = inspector.url()
+    console.log('Inspector opened on:', currentInspectorUrl)
     // open -a "Google Chrome" http://stackoverflow.com
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
