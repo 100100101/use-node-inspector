@@ -22,5 +22,8 @@ export default async ({
     // open -a "Google Chrome" http://stackoverflow.com
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
-    watchProcessDeath(inspector.close)
+    watchProcessDeath(() => {
+        console.log('inspector close')
+        inspector.close()
+    })
 }
