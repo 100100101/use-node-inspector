@@ -3,6 +3,7 @@
 import inspector from 'node:inspector'
 
 import { watchProcessDeath } from 'watch-process-death'
+
 type TOptions = {
     host?: string
     port?: number
