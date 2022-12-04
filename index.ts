@@ -1,3 +1,5 @@
+import '@types/node'
+
 import inspector from 'node:inspector'
 
 import { watchProcessDeath } from 'watch-process-death'
