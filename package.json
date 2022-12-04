@@ -9,5 +9,8 @@
   "license": "ISC",
   "dependencies": {
     "watch-process-death": "git+https://github.com/JSerGit/watch-process-death.git"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
   }
 }
