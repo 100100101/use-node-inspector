@@ -7,7 +7,6 @@ type Props = {
     host?: string
     port?: number
 }
-
 // const CDP = require('chrome-remote-interface')
 // async function example() {
 //     let client
