@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "outDir": ".dist",
+    "allowJs": true,
+    "target": "ESNext",
+    // "module": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "types"
+    ],
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.js",
+    // "**/*.json",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    ".trash"
+  ]
+}

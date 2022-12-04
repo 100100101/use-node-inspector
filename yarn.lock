@@ -948,7 +948,7 @@ vscode-uri@^3.0.3:
 
 "watch-process-death@git+https://github.com/JSerGit/watch-process-death.git":
   version "1.0.0"
-  resolved "git+https://github.com/JSerGit/watch-process-death.git#4232d8b0f80c0bc4a42def53334f36f25a7801b0"
+  resolved "git+https://github.com/JSerGit/watch-process-death.git#7548f2eda5f1e8f936c9b1a05d1fb35f9ee8baf7"
 
 which@^2.0.1:
   version "2.0.2"
