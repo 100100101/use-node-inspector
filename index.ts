@@ -1,4 +1,7 @@
+import '@types/node'
+
 import inspector from 'node:inspector'
+
 import { watchProcessDeath } from 'watch-process-death'
 type Props = {
     host?: string
@@ -51,7 +54,7 @@ export default async ({
     const isInspectorStartedEarlier = !!currentInspectorUrl
     if (isInspectorStartedEarlier) {
         console.warn(
-            `Inspector (${host}:${port}) not started because he was started earler, and has url: ${currentInspectorUrl}`
+            `Inspector (${host}:${port}) not started because he was started earlier, and has url: ${currentInspectorUrl}`
         )
         return
     }
@@ -62,7 +65,7 @@ export default async ({
     // open -a "Google Chrome" http://localhost:8081/web-downloads/
     // --args --disable-web-security
     watchProcessDeath(() => {
-        console.log('inspector close')
+        console.log('node:inspector close')
         inspector.close()
     })
 }

@@ -11,6 +11,9 @@
     "http-proxy": "^1.18.1",
     "socket.io": "^4.5.1",
     "socket.io-client": "^4.5.1",
-    "watch-process-death": "link:../watch-process-death"
+    "watch-process-death": "github:JSerGit/watch-process-death"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
   }
 }
