@@ -7,7 +7,7 @@ type TOptions = {
     host?: string
     port?: number
 }
-export default async ({
+const useNodeInspector = async ({
     host = 'localhost',
     port = 9229,
 }: TOptions): Promise<void> => {
@@ -30,6 +30,7 @@ export default async ({
         inspector.close()
     })
 }
+export default useNodeInspector
 
 // const CDP = require('chrome-remote-interface')
 // async function example() {
