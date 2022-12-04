@@ -1,4 +1,4 @@
-import '@types/node'
+/// <reference types="node" />
 
 import inspector from 'node:inspector'
 
