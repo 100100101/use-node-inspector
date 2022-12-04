@@ -3,14 +3,14 @@ import '@types/node'
 import inspector from 'node:inspector'
 
 import { watchProcessDeath } from 'watch-process-death'
-type Props = {
+type TOptions = {
     host?: string
     port?: number
 }
 export default async ({
     host = 'localhost',
     port = 9229,
-}: Props): Promise<void> => {
+}: TOptions): Promise<void> => {
     let currentInspectorUrl = inspector.url()
     const isInspectorStartedEarlier = !!currentInspectorUrl
     if (isInspectorStartedEarlier) {
