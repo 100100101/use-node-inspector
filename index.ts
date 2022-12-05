@@ -4,7 +4,7 @@ import inspector from 'node:inspector'
 
 // import { watchProcessDeath } from 'watch-process-death'
 // import { watchProcessDeath } from '../watch-process-death/src'
-import { watchProcessDeath } from '../watch-process-death/src/index'
+import { watchProcessDeath } from '../watch-process-death'
 import { TUseNodeInspector } from './types'
 
 const defaultOptions = {
@@ -31,7 +31,8 @@ export const useNodeInspector: TUseNodeInspector = async options => {
     inspector.open(port, host)
     currentInspectorUrl = inspector.url()
     console.log('Inspector opened on:', currentInspectorUrl)
-    watchProcessDeath(() => {
+    watchProcessDeath(async () => {
+        await new Promise(resolve => process.nextTick(resolve))
         console.log('node:inspector close')
         inspector.close()
     })
