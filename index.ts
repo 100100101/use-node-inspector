@@ -2,16 +2,24 @@
 
 import inspector from 'node:inspector'
 
-import { watchProcessDeath } from 'watch-process-death'
+// import { watchProcessDeath } from 'watch-process-death'
+// import { watchProcessDeath } from '../watch-process-death/src'
+import { watchProcessDeath } from '../watch-process-death/src/index'
+import { TUseNodeInspector } from './types'
 
-type TOptions = {
-    host?: string
-    port?: number
+const defaultOptions = {
+    host: 'localhost',
+    port: 9229,
 }
-const useNodeInspector = async ({
-    host = 'localhost',
-    port = 9229,
-}: TOptions): Promise<void> => {
+export const useNodeInspector: TUseNodeInspector = async options => {
+    let finalOptions = defaultOptions
+    if (options) {
+        finalOptions = {
+            ...defaultOptions,
+            ...options,
+        }
+    }
+    const { host, port } = finalOptions
     let currentInspectorUrl = inspector.url()
     const isInspectorStartedEarlier = !!currentInspectorUrl
     if (isInspectorStartedEarlier) {
@@ -23,50 +31,8 @@ const useNodeInspector = async ({
     inspector.open(port, host)
     currentInspectorUrl = inspector.url()
     console.log('Inspector opened on:', currentInspectorUrl)
-    // open -a "Google Chrome" http://stackoverflow.com
-    // open -a "Google Chrome" http://localhost:8081/web-downloads/
-    // --args --disable-web-security
     watchProcessDeath(() => {
-        console.log('inspector close')
+        console.log('node:inspector close')
         inspector.close()
     })
 }
-export default useNodeInspector
-
-// const CDP = require('chrome-remote-interface')
-// async function example() {
-//     let client
-//     try {
-//         // connect to endpoint
-//         client = await CDP()
-//         // extract domains
-//         const { Network, Page } = client
-//         // setup handlers
-//         Network.requestWillBeSent(params => {
-//             console.log(params.request.url)
-//         })
-//         // enable events then start!
-//         await Network.enable()
-//         await Page.enable()
-//         await Page.navigate({ url: 'https://github.com' })
-//         await Page.loadEventFired()
-//     } catch (err) {
-//         console.error(err)
-//     } finally {
-//         if (client) {
-//             await client.close()
-//         }
-//     }
-// }
-// example()
-
-// const startWsWatching = wsUrl => {
-//     const DevToolsClient = require('./devtools-client')
-//     const Controller = new DevToolsClient()
-//     Controller.connect({
-//         nodeWSEndpoint: wsUrl,
-//     }).then(({ Debugger, Runtime, Profiler }) => {
-//         console.log('Debugger, Runtime, Profiler:', Debugger, Runtime, Profiler)
-//         // resolves with an object containing all available DevTools domains
-//     })
-// }
