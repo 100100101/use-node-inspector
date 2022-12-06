@@ -3,6 +3,7 @@
 import inspector from 'node:inspector'
 
 import { watchProcessDeath } from 'watch-process-death'
+
 import { TUseNodeInspector } from './types'
 
 const defaultOptions = {
