@@ -3,10 +3,10 @@
 
 
 "@types/node@^18.11.10":
-  version "18.11.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.10.tgz#4c64759f3c2343b7e6c4b9caf761c7a3a05cee34"
-  integrity sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==
+  version "18.11.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.11.tgz#1d455ac0211549a8409d3cdb371cd55cc971e8dc"
+  integrity sha512-KJ021B1nlQUBLopzZmPBVuGU9un7WJd/W4ya7Ih02B4Uwky5Nja0yGYav2EfYIk0RR2Q9oVhf60S2XR1BCWJ2g==
 
 "watch-process-death@git+https://github.com/JSerGit/watch-process-death.git":
   version "1.0.0"
-  resolved "git+https://github.com/JSerGit/watch-process-death.git#7548f2eda5f1e8f936c9b1a05d1fb35f9ee8baf7"
+  resolved "git+https://github.com/JSerGit/watch-process-death.git#a4c7ce633c4e6b07ace55eac8c2125a2b93380bb"
