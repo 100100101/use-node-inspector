@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": ".dist",
+    "outDir": "lib",
     // "outDir": "./out",
     "allowJs": true, //enables the build without .ts files
     "target": "ESNext",

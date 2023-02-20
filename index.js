@@ -1,9 +1,11 @@
-const tsNode = require('ts-node')
-tsNode.register({
-    project: './tsconfig.json',
-    require: ['tsconfig-paths/register'],
-    preferTsExts: true,
-    ignore: [/(?!.*\/(?:watch-process-death)\/).*node_modules/],
+const path = require('node:path')
+const { execFileSync } = require('node:child_process')
+const pathToTsc = path.join(__dirname, 'node_modules/typescript/bin/tsc')
+const pathToTsConfig = path.join(__dirname, 'tsconfig.json')
+const tsconfig = require(pathToTsConfig)
+const outDir = tsconfig.compilerOptions.outDir
+execFileSync(process.execPath, [pathToTsc, '--project', pathToTsConfig], {
+    cwd: __dirname,
 })
-const tsIndex = require('./src/index.ts')
-module.exports = tsIndex
+const transpiledModule = require(outDir)
+module.exports = transpiledModule

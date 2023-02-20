@@ -8,8 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5",
     "watch-process-death": "git+https://github.com/JSerGit/watch-process-death.git"
   },
   "devDependencies": {
