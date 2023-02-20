@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "outDir": ".dist",
-    "allowJs": true,
+    // "outDir": "./out",
+    "allowJs": true, //enables the build without .ts files
     "target": "ESNext",
     // "module": "ESNext",
     "module": "CommonJS",
@@ -35,8 +36,7 @@
     // "**/*.json",
   ],
   "exclude": [
-    "node_modules",
+    "node_modules/",
     "**/*.test.ts",
-    ".trash"
   ]
 }
