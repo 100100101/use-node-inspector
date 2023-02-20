@@ -31,9 +31,7 @@
     ],
   },
   "include": [
-    "**/*.ts",
-    "**/*.js",
-    // "**/*.json",
+    "./src"
   ],
   "exclude": [
     "node_modules/",
