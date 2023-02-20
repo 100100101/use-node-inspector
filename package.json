@@ -2,7 +2,7 @@
   "name": "use-node-inspector",
   "version": "1.0.0",
   "description": "Start Node.js inspector programmatically",
-  "main": "index.ts",
+  "main": "index.js",
   "types": "index.d.ts",
   "keywords": [],
   "author": "",
