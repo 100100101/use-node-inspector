@@ -19,7 +19,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "rootDir": ".",
+    "rootDir": "./src",
     "paths": {
       "@/*": [
         "./*"
