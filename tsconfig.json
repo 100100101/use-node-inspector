@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "./lib",
     "allowJs": true,
     "target": "ESNext",
     "module": "CommonJS",
