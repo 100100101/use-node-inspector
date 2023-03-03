@@ -1,20 +1,16 @@
 {
   "compilerOptions": {
     "outDir": "lib",
-    // "outDir": "./out",
-    "allowJs": true, //enables the build without .ts files
+    "allowJs": true,
     "target": "ESNext",
-    // "module": "ESNext",
     "module": "CommonJS",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "importHelpers": true,
     "moduleResolution": "node",
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -25,10 +21,9 @@
         "./*"
       ],
     },
-    "typeRoots": [
-      "./node_modules/@types",
-      "types"
-    ],
+    "declaration": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "./src"
