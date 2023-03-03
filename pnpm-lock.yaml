@@ -1,0 +1,41 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@types/node': ^18.14.0
+  package-auto-tsc: git+https://github.com/JSerGit/package-auto-tsc.git
+  typescript: ^4.9.5
+  watch-process-death: git+https://github.com/JSerGit/watch-process-death.git
+
+dependencies:
+  '@types/node': 18.14.4
+  package-auto-tsc: github.com/JSerGit/package-auto-tsc/f9ff2944f2408a3aba834bff43e165458e6c21c5
+  typescript: 4.9.5
+  watch-process-death: github.com/JSerGit/watch-process-death/47456ae3088eaa0114996730320853becc9c65e8
+
+packages:
+
+  /@types/node/18.14.4:
+    resolution: {integrity: sha512-VhCw7I7qO2X49+jaKcAUwi3rR+hbxT5VcYF493+Z5kMLI0DL568b7JI4IDJaxWFH0D/xwmGJNoXisyX+w7GH/g==}
+    dev: false
+
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false
+
+  github.com/JSerGit/package-auto-tsc/f9ff2944f2408a3aba834bff43e165458e6c21c5:
+    resolution: {tarball: https://codeload.github.com/JSerGit/package-auto-tsc/tar.gz/f9ff2944f2408a3aba834bff43e165458e6c21c5}
+    name: package-auto-tsc
+    version: 1.0.0
+    dev: false
+
+  github.com/JSerGit/watch-process-death/47456ae3088eaa0114996730320853becc9c65e8:
+    resolution: {tarball: https://codeload.github.com/JSerGit/watch-process-death/tar.gz/47456ae3088eaa0114996730320853becc9c65e8}
+    name: watch-process-death
+    version: 1.0.34
+    dependencies:
+      '@types/node': 18.14.4
+      package-auto-tsc: github.com/JSerGit/package-auto-tsc/f9ff2944f2408a3aba834bff43e165458e6c21c5
+      typescript: 4.9.5
+    dev: false
