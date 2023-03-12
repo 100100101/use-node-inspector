@@ -1,6 +1,6 @@
 {
     "name": "use-node-inspector",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "Start Node.js inspector programmatically",
     "main": "./index.js",
     "types": "./lib/index.d.ts",
@@ -8,9 +8,9 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "watch-process-death": "git+https://github.com/JSerGit/watch-process-death.git",
-        "@types/node": "^18.14.0",
+        "@types/node": "^18.15.0",
+        "package-auto-tsc": "github:JSerGit/package-auto-tsc",
         "typescript": "^4.9.5",
-        "package-auto-tsc": "git+https://github.com/JSerGit/package-auto-tsc.git"
+        "watch-process-death": "github:JSerGit/watch-process-death"
     }
 }

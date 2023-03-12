@@ -2,7 +2,8 @@
 
 import inspector from 'node:inspector'
 
-import { watchProcessDeath } from 'watch-process-death'
+import { WatchProcessDeath } from 'watch-process-death'
+const watchProcessDeath = new WatchProcessDeath()
 import { TUseNodeInspector } from '../types'
 
 const defaultOptions = {
@@ -29,7 +30,7 @@ export const useNodeInspector: TUseNodeInspector = async options => {
     inspector.open(port, host)
     currentInspectorUrl = inspector.url()
     console.log('Inspector opened on:', currentInspectorUrl)
-    watchProcessDeath(async (eventName, withExit) => {
+    watchProcessDeath.addMiddleware(async (eventName, withExit) => {
         if (!withExit) return
         await new Promise(resolve => process.nextTick(resolve))
         console.log('node:inspector close')
