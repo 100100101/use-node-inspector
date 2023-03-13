@@ -9,8 +9,8 @@
     "license": "ISC",
     "dependencies": {
         "@types/node": "^18.15.0",
-        "package-auto-tsc": "git+https://github.com/100100101/package-auto-tsc.git",
+        "package-auto-tsc": "github:100100101/package-auto-tsc",
         "typescript": "^4.9.5",
-        "watch-process-death": "git+https://github.com/100100101/watch-process-death.git"
+        "watch-process-death": "github:100100101/watch-process-death"
     }
 }

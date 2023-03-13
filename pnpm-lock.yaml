@@ -2,15 +2,15 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.15.0
-  package-auto-tsc: git+https://github.com/100100101/package-auto-tsc.git
+  package-auto-tsc: github:100100101/package-auto-tsc
   typescript: ^4.9.5
-  watch-process-death: git+https://github.com/100100101/watch-process-death.git
+  watch-process-death: github:100100101/watch-process-death
 
 dependencies:
   '@types/node': 18.15.0
   package-auto-tsc: github.com/100100101/package-auto-tsc/f98f4386a43eab83a8abe5e89a0754dd27340831
   typescript: 4.9.5
-  watch-process-death: github.com/100100101/watch-process-death/2c71ec14bd979c682eaa6f26b7a85977f532875c
+  watch-process-death: github.com/100100101/watch-process-death/4c1180dc222943ef0b214a5ad807802677266ca2
 
 packages:
 
@@ -30,10 +30,10 @@ packages:
     version: 1.0.1
     dev: false
 
-  github.com/100100101/watch-process-death/2c71ec14bd979c682eaa6f26b7a85977f532875c:
-    resolution: {tarball: https://codeload.github.com/100100101/watch-process-death/tar.gz/2c71ec14bd979c682eaa6f26b7a85977f532875c}
+  github.com/100100101/watch-process-death/4c1180dc222943ef0b214a5ad807802677266ca2:
+    resolution: {tarball: https://codeload.github.com/100100101/watch-process-death/tar.gz/4c1180dc222943ef0b214a5ad807802677266ca2}
     name: watch-process-death
-    version: 2.1.107
+    version: 2.1.108
     dependencies:
       '@types/node': 18.15.0
       package-auto-tsc: github.com/100100101/package-auto-tsc/f98f4386a43eab83a8abe5e89a0754dd27340831
