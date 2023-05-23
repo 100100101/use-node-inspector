@@ -8,7 +8,7 @@
     "author": "",
     "license": "ISC",
     "scripts": {
-        "build:": "npx tsc --build"
+        "build": "npx tsc --build"
     },
     "devDependencies": {
         "@types/node": "^20.2.3",
