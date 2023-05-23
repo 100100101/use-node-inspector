@@ -1,39 +1,43 @@
-/// <reference types="node" />
-
 import inspector from 'node:inspector'
+import { setProcessDeathHandlers } from './setProcessDeathHandlers'
+import { killPrevProcess } from './killPrevProcess'
+export * from './killProcess'
+export type TBeforeKillProcess = () => Promise<void> | void
+type TUseNodeInspector = (props: {
+    port?: number
+    host?: string
+    beforeKillProcess?: TBeforeKillProcess
+    // clearConsoleAfterInstancesQt?: number | false
+    isClearConsole?: boolean
+}) => Promise<void>
 
-import { WatchProcessDeath } from 'watch-process-death'
-const watchProcessDeath = new WatchProcessDeath()
-import { TUseNodeInspector } from '../types'
+const defaultPort = 9229
+const defaultHost = 'localhost'
 
-const defaultOptions = {
-    host: 'localhost',
-    port: 9229,
-}
-export const useNodeInspector: TUseNodeInspector = async options => {
-    let finalOptions = defaultOptions
-    if (options) {
-        finalOptions = {
-            ...defaultOptions,
-            ...options,
-        }
-    }
-    const { host, port } = finalOptions
+export const useNodeInspector: TUseNodeInspector = async ({
+    port = defaultPort,
+    host = defaultHost,
+    beforeKillProcess,
+    isClearConsole = false,
+}) => {
+    killPrevProcess()
+
     let currentInspectorUrl = inspector.url()
-    const isInspectorStartedEarlier = !!currentInspectorUrl
+    const isInspectorStartedEarlier =
+        !!currentInspectorUrl && currentInspectorUrl.includes(`:${port}`)
     if (isInspectorStartedEarlier) {
         console.warn(
-            `Inspector (${host}:${port}) not started because he was started earler, and has url: ${currentInspectorUrl}`
+            `Inspector (${host}:${port}) not started because he was started early, and has url: ${currentInspectorUrl}`
         )
+        inspector.close()
         return
     }
+
     inspector.open(port, host)
     currentInspectorUrl = inspector.url()
+    if (isClearConsole) {
+        console.clear()
+    }
     console.log('Inspector opened on:', currentInspectorUrl)
-    watchProcessDeath.addMiddleware(async (eventName, withExit) => {
-        if (!withExit) return
-        await new Promise(resolve => process.nextTick(resolve))
-        console.log('node:inspector close')
-        inspector.close()
-    })
+    setProcessDeathHandlers({ beforeKillProcess })
 }

@@ -1,16 +1,22 @@
 {
     "name": "use-node-inspector",
-    "version": "1.0.8",
-    "description": "Start Node.js inspector programmatically",
-    "main": "./index.js",
+    "version": "2.0.0",
+    "description": "Start Node.js inspector programmatically, and reliably process terminate",
+    "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "dependencies": {
-        "@types/node": "^18.15.0",
+    "scripts": {
+        "build:": "npx tsc --build"
+    },
+    "devDependencies": {
+        "@types/node": "^20.2.3",
         "package-auto-tsc": "github:100100101/package-auto-tsc",
-        "typescript": "^4.9.5",
-        "watch-process-death": "github:100100101/watch-process-death"
-    }
+        "typescript": "^5.0.4"
+    },
+    "os": [
+        "darwin",
+        "linux"
+    ]
 }
