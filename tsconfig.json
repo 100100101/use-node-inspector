@@ -3,7 +3,7 @@
     "outDir": "./lib",
     "allowJs": true,
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "ESNext",
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
